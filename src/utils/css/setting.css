@@ -1,162 +1,97 @@
-/* src/utils/css/setting.css */
+/* Settings page styles */
 
-/* Wrapper layout */
-.settings-wrapper {
-  display: flex;
-  gap: 24px;
-  padding: 24px;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100%;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* Sidebar */
-.settings-sidebar {
-  width: 220px;
+.settings-group {
   background: var(--panel);
-  border-radius: 12px;
-  padding: 16px 0;
-  flex-shrink: 0;
-}
-
-.settings-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.settings-item {
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.settings-item:hover {
-  background: var(--panel-soft);
-  color: var(--text);
-}
-
-.settings-item.active {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* Main content */
-.settings-main {
-  flex-grow: 1;
-  background: var(--panel-soft);
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
   padding: 24px;
-  box-sizing: border-box;
+  margin-bottom: 24px;
 }
 
-.settings-section {
-  display: none;
-  animation: fadeIn 0.2s ease;
-}
-
-.settings-section.active {
-  display: block;
-}
-
-.settings-section h2 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 20px;
-  color: var(--text);
-}
-
-.settings-section h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  color: var(--text);
-}
-
-.settings-section p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.settings-section strong {
-  color: var(--text);
-}
-
-/* Gender buttons */
-.gender-select {
+.settings-options {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.settings-option {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  margin-top: 4px;
 }
 
-.gender-btn {
-  padding: 6px 12px;
-  background: var(--panel);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.gender-btn:hover {
-  background: var(--panel-soft);
+.settings-option label {
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text);
 }
 
-.gender-btn.selected {
+.settings-option input[type="text"],
+.settings-option input[type="email"] {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.settings-option input[type="text"]:disabled,
+.settings-option input[type="email"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toggle-option {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-option input[type="checkbox"] {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary {
   background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-
-/* Language select */
-.language-select {
-  margin-top: 4px;
-  padding: 6px 10px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 6px;
   color: var(--text);
-  cursor: pointer;
 }
 
-.language-select option {
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
   background: var(--panel-soft);
   color: var(--text);
+  border: 1px solid var(--border);
 }
 
-/* Fade in animation for sections */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+.btn-secondary:hover {
+  background: var(--panel);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .settings-wrapper {
-    flex-direction: column;
-  }
+.btn-danger {
+  background: #dc2626;
+  color: var(--text);
+}
 
-  .settings-sidebar {
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-    border-radius: 8px;
-  }
-
-  .settings-menu {
-    display: flex;
-    gap: 8px;
-  }
-
-  .settings-item {
-    flex-shrink: 0;
-    padding: 10px 16px;
-  }
+.btn-danger:hover {
+  background: #b91c1c;
 }
