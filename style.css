@@ -1,61 +1,129 @@
-:root {
-  --bg: #0b0d10;
-  --panel: #14161a;
-  --panel-soft: #1b1e24;
-  --text: #ffffff;
-  --muted: rgba(255,255,255,.6);
-  --line: rgba(255,255,255,.08);
-}
-
+/* =========================
+   BASE RESET
+========================= */
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  padding: 0;
 }
 
-/* Top Nav */
+html, body {
+  height: 100%;
+}
+
+/* =========================
+   FONT (2006 Roblox / DynaBlocks)
+========================= */
+body {
+  font-family: Arial, Tahoma, "Trebuchet MS", Verdana, sans-serif;
+  background: #0e0f13;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --bg: #0e0f13;
+  --panel: #14161b;
+  --panel-soft: #1c1f27;
+  --border: rgba(255,255,255,0.08);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.6);
+}
+
+/* =========================
+   TOP NAV
+========================= */
 .top-nav {
   height: 56px;
-  background: var(--panel);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 14px;
-  border-bottom: 1px solid var(--line);
+  padding: 0 24px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
 }
 
-.hamburger {
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-link.active {
+  color: var(--text);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--panel-soft);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.search-bar input {
   background: none;
   border: none;
+  outline: none;
   color: var(--text);
-  cursor: pointer;
+  font-size: 14px;
 }
 
-.nav-links a {
-  margin-left: 14px;
-  color: var(--muted);
-  text-decoration: none;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.nav-links .active {
-  color: var(--text);
-}
-
-/* Sidebar */
+/* =========================
+   LAYOUT ZONING (SPACE TO EXTEND)
+========================= */
 .sidebar {
   position: fixed;
   top: 56px;
   left: 0;
-  width: 220px;
+  width: 240px;
   height: calc(100vh - 56px);
   background: var(--panel);
-  border-right: 1px solid var(--line);
-  padding: 12px;
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 48px;
+  min-height: calc(100vh - 56px);
+  max-width: 1400px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.user-profile {
+  margin-bottom: 32px;
+  font-weight: bold;
 }
 
 .sidebar-nav {
@@ -65,10 +133,11 @@ body {
 }
 
 .sidebar-item {
-  padding: 10px;
-  border-radius: 6px;
-  color: var(--muted);
   text-decoration: none;
+  color: var(--muted);
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .sidebar-item.active,
@@ -77,44 +146,54 @@ body {
   color: var(--text);
 }
 
-.gtg-btn {
-  margin-top: auto;
-  padding: 10px;
-  background: var(--panel-soft);
-  border: none;
-  color: var(--text);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Main Content */
-.main-content {
-  margin-left: 220px;
-  padding: 20px;
-}
-
+/* =========================
+   HEADINGS / STRUCTURE
+========================= */
 .page-title {
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
 .section {
-  margin-bottom: 24px;
+  margin-bottom: 56px;
 }
 
 .section-title {
-  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
+/* =========================
+   CONTENT ZONES
+========================= */
 .library-grid,
 .continue-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  min-height: 120px;
 }
 
-.empty-page {
-  color: var(--muted);
-  padding: 20px;
+/* Empty state so it never feels broken */
+.library-grid:empty::after,
+.continue-grid:empty::after {
+  content: "Empty";
+  padding: 24px;
   background: var(--panel-soft);
   border-radius: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   ICON / BUTTON RESET
+========================= */
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
 }
