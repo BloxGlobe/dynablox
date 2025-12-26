@@ -1,12 +1,12 @@
-/* =========================
-   FRIENDS SECTION
-========================= */
+/* friends - section styles */
+
 .friends-container {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   padding-bottom: 16px;
   align-items: flex-start;
+  scroll-behavior: smooth; /* smooth scrolling */
 }
 
 .friend-item {
@@ -15,11 +15,12 @@
   align-items: center;
   min-width: 80px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .friend-item:hover {
   transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .friend-avatar {
@@ -36,6 +37,7 @@
   font-weight: bold;
   color: var(--text);
   position: relative;
+  overflow: hidden;
 }
 
 .friend-item.add-friend .friend-avatar {
@@ -50,6 +52,7 @@
 
 .friend-avatar svg {
   color: var(--muted);
+  transition: color 0.2s ease;
 }
 
 .friend-item.add-friend:hover .friend-avatar svg {
@@ -64,6 +67,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .friend-item:hover .friend-name {
@@ -104,4 +108,17 @@
 
 .friends-container::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .friend-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .friend-name {
+    max-width: 60px;
+    font-size: 11px;
+  }
 }
