@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DynaBlox – Dashboard</title>
+    <title>DynaBlox | Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,18 +11,11 @@
     <!-- Top Navigation -->
     <nav class="top-nav">
         <div class="nav-left">
-            <button class="hamburger" id="hamburger">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
             <div class="logo">D</div>
             <div class="nav-links">
-                <a href="#dashboard" class="nav-link active">Dashboard</a>
+                <a href="#home" class="nav-link">Home</a>
                 <a href="#library" class="nav-link">Library</a>
-                <a href="#create" class="nav-link">Create</a>
+                <a href="#communities" class="nav-link">Communities</a>
                 <a href="#resources" class="nav-link">Resources</a>
             </div>
         </div>
@@ -36,45 +29,17 @@
         </div>
 
         <div class="nav-right">
-            <div class="user-info">
-                <div class="avatar"></div>
-                <span class="username">Abel</span>
-                <span class="age-tag">13+</span>
-            </div>
-
-            <button class="icon-btn notification-btn">
-                <span class="badge">2</span>
+            <button class="icon-btn settings-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6"></path>
+                    <path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24"></path>
+                    <path d="M1 12h6m6 0h6"></path>
+                    <path d="m4.93 19.07 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+                </svg>
             </button>
-
-            <button class="icon-btn points-btn">
-                <span>0</span>
-            </button>
-
-            <button class="icon-btn settings-btn"></button>
         </div>
     </nav>
-
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="user-profile">
-            <div class="profile-avatar"></div>
-            <span class="profile-name">Abel</span>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="#dashboard" class="sidebar-item active">Dashboard</a>
-            <a href="#profile" class="sidebar-item">Profile</a>
-            <a href="#messages" class="sidebar-item">Messages</a>
-            <a href="#connect" class="sidebar-item">Study Partners</a>
-            <a href="#library" class="sidebar-item">My Library</a>
-            <a href="#progress" class="sidebar-item">Progress</a>
-            <a href="#groups" class="sidebar-item">Study Groups</a>
-            <a href="#blog" class="sidebar-item">Blog</a>
-        </nav>
-
-        <!-- GTG button -->
-        <button class="gtg-btn">GTG</button>
-    </aside>
 
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
