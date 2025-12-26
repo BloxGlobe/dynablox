@@ -1,12 +1,5 @@
-// main.js
+import { loadFriends } from "./pages/other/friend.py";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const sidebar = document.getElementById("sidebar");
-
-  if (hamburger && sidebar) {
-    hamburger.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-    });
-  }
+    loadFriends(); // dynamically load added friends
 });

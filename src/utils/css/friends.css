@@ -1,5 +1,6 @@
-/* friends - section styles */
-
+/* =========================
+   FRIENDS SECTION
+========================= */
 .friends-container {
   display: flex;
   gap: 16px;
@@ -15,12 +16,12 @@
   align-items: center;
   min-width: 80px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease;
+  border-radius: 8px; /* smooth corners for highlight */
 }
 
 .friend-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.05); /* faint highlight */
 }
 
 .friend-avatar {
