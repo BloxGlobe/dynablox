@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DynaBlocks | Dashboard</title>
+    <title>DynaBlocks</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="src/utils/css/friends.css">
 </head>
@@ -14,7 +14,7 @@
         <div class="nav-left">
             <div class="logo">DynaBlocks</div>
             <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
+                <a href="#home" class="nav-link active">Home</a>
                 <a href="#library" class="nav-link">Library</a>
                 <a href="#communities" class="nav-link">Communities</a>
                 <a href="#resources" class="nav-link">Resources</a>
@@ -42,47 +42,13 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content Container -->
     <main class="main-content" id="mainContent">
-        <h1 class="page-title">Dashboard</h1>
-
-        <!-- Friends Section -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Friends</h2>
-            </div>
-            <div class="friends-container">
-                <div class="friend-item add-friend">
-                    <div class="friend-avatar">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                    </div>
-                    <span class="friend-name">Add Friend</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Recommended Section -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Recommended For You</h2>
-            </div>
-            <div class="library-grid" id="recommendedGrid"></div>
-        </section>
-
-        <!-- Resources Section -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Resources</h2>
-            </div>
-            <div class="continue-grid" id="resourcesGrid"></div>
-        </section>
+        <!-- Pages load here -->
     </main>
 
-    <script type="module" src="main.js"></script>
-    <script type="module" src="router.js"></script>
+    <script src="router.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
